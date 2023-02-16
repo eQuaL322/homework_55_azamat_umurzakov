@@ -21,4 +21,4 @@ def add_task(request: WSGIRequest):
     task_data['status'] = status_mapping.get(task_data['status'], 'new')
     task = Task.objects.create(**task_data)
 
-    return redirect(f'/task/?pk={task.pk}')
+    return redirect('task_view', pk=task.pk)

@@ -17,7 +17,7 @@
     <p>Статус: {{ task.status }}</p>
     <p>Дата выполнения: {{ task.complete_data }}</p>
     <p>
-        <a href="/" class="btn btn-dark">Глваная</a>
+        <a href="{% url 'task_list' %}" class="btn btn-dark">Глваная</a>
     </p>
 </div>
 </body>

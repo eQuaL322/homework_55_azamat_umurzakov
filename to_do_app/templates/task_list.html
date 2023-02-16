@@ -15,8 +15,7 @@
             <div class="col-3 my-3">
                 <h4 class="text-uppercase">{{ task.description }}</h4>
                 <p>
-                    <a href="/task/?pk={{ task.pk }}" class="btn btn-link text-decoration-none text-lowercase">Посмотреть
-                        задачу</a>
+                    <a href="{% url 'task_view' task.pk %}" class="btn btn-link text-decoration-none text-lowercase">Подробнее</a>
                 </p>
             </div>
         {% endfor %}
