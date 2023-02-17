@@ -1,5 +1,6 @@
 from django.core.handlers.wsgi import WSGIRequest
 from django.shortcuts import render, redirect
+from django.urls import reverse
 
 from to_do_app.models import Task
 
@@ -21,4 +22,4 @@ def add_task(request: WSGIRequest):
     task_data['status'] = status_mapping.get(task_data['status'], 'new')
     task = Task.objects.create(**task_data)
 
-    return redirect('task_view', pk=task.pk)
+    return redirect(reverse('task_view', kwargs={'pk': task.pk}))
