@@ -63,3 +63,10 @@ def confirm_delete(request, pk):
     task = get_object_or_404(Task, pk=pk)
     task.delete()
     return redirect('task_list')
+
+
+def task_view(request, pk):
+    task = get_object_or_404(Task, pk=pk)
+    return render(request, 'task.html', context={
+        'task': task
+    })

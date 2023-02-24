@@ -1,7 +1,7 @@
 from django.urls import path
 
-from to_do_app.views.base import tasks_list, task_view
-from to_do_app.views.tasks import add_task, update_task_view, delete_view, confirm_delete
+from to_do_app.views.base import tasks_list
+from to_do_app.views.tasks import add_task, update_task_view, delete_view, confirm_delete, task_view
 
 urlpatterns = [
     path('', tasks_list, name='task_list'),
