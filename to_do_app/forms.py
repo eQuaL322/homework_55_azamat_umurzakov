@@ -4,7 +4,7 @@ from django import forms
 from django.core.exceptions import ValidationError
 from django.forms import widgets
 
-from to_do_app.models import StatusChoice, Task
+from to_do_app.models import StatusChoice
 
 
 class TaskForm(forms.Form):
@@ -19,7 +19,6 @@ class TaskForm(forms.Form):
 
     def clean_title(self):
         description = self.cleaned_data.get('description')
-        if description:
-            if len(description) < 2:
-                raise ValidationError('Заголовок должен быть длиннее 2 символов')
-            return description
+        if len(description) < 2:
+            raise ValidationError('Заголовок должен быть длиннее 2 символов')
+        return description
