@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 {% block title %}Задача{% endblock %}
+{% block menu %}
+    <a class="list-group-item list-group-item-action list-group-item-secondary"
+       href="{% url 'update_task_view' task.pk %}">Редактировать</a>
+{% endblock %}
 {% block content %}
     <div class="row mt-5 text-center">
         <h2>Детали задачи</h2>
