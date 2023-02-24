@@ -256,7 +256,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$390000$AtKd95VCEoYIlM1N1FAdfT$5K/fyj7Yin5vVfm4QX95bn1qkZV24OT6YI85lCE/jmg=",
-    "last_login": "2023-02-14T00:00:34.133Z",
+    "last_login": "2023-02-16T23:51:04.273Z",
     "is_superuser": true,
     "username": "root",
     "first_name": "",
@@ -270,95 +270,15 @@
   }
 },
 {
-  "model": "contenttypes.contenttype",
-  "pk": 1,
-  "fields": {
-    "app_label": "auth",
-    "model": "permission"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 2,
-  "fields": {
-    "app_label": "auth",
-    "model": "group"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 3,
-  "fields": {
-    "app_label": "auth",
-    "model": "user"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 4,
-  "fields": {
-    "app_label": "contenttypes",
-    "model": "contenttype"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 5,
-  "fields": {
-    "app_label": "to_do_app",
-    "model": "task"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 6,
-  "fields": {
-    "app_label": "admin",
-    "model": "logentry"
-  }
-},
-{
-  "model": "contenttypes.contenttype",
-  "pk": 7,
-  "fields": {
-    "app_label": "sessions",
-    "model": "session"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "jkkwb41xy4g7idspv8rq3n6nwaz93usa",
-  "fields": {
-    "session_data": ".eJxVjEEOwiAQRe_C2hBKYaAu3XsGMsyAVA0kpV0Z765NutDtf-_9lwi4rSVsPS1hZnEWgzj9bhHpkeoO-I711iS1ui5zlLsiD9rltXF6Xg7376BgL99agUHWjJlz9BZGpUavTKIBJoTMzgKgzckmTQajs9rb7LQhohGin5R4fwDt_jgF:1pRikM:8u5D7zz7gVYe66ZXQeaIbqwz6xK0LG5OhI32a2fUGLY",
-    "expire_date": "2023-02-28T00:00:34.136Z"
-  }
-},
-{
-  "model": "sessions.session",
-  "pk": "t2j0dawdm6jo5l9xr709vdb5vtra7ywy",
-  "fields": {
-    "session_data": ".eJxVjEEOwiAQRe_C2hBKYaAu3XsGMsyAVA0kpV0Z765NutDtf-_9lwi4rSVsPS1hZnEWgzj9bhHpkeoO-I711iS1ui5zlLsiD9rltXF6Xg7376BgL99agUHWjJlz9BZGpUavTKIBJoTMzgKgzckmTQajs9rb7LQhohGin5R4fwDt_jgF:1pRiZl:-ukbtGc3uiY1w8QSoCq7-WYk_0SIpU-v3NBPyjwG66I",
-    "expire_date": "2023-02-27T23:49:37.023Z"
-  }
-},
-{
-  "model": "to_do_app.task",
-  "pk": 2,
-  "fields": {
-    "description": "Купить айфон",
-    "status": "новая",
-    "complete_data": "2023-02-28",
-    "detailed_description": ""
-  }
-},
-{
   "model": "to_do_app.task",
   "pk": 3,
   "fields": {
     "description": "Купить машину",
+    "detailed_description": "",
     "status": "в процессе",
     "complete_data": "2023-02-23",
-    "detailed_description": ""
+    "is_deleted": false,
+    "deleted_at": null
   }
 },
 {
@@ -366,19 +286,11 @@
   "pk": 4,
   "fields": {
     "description": "переезд",
+    "detailed_description": "",
     "status": "сделано",
     "complete_data": "2023-02-14",
-    "detailed_description": ""
-  }
-},
-{
-  "model": "to_do_app.task",
-  "pk": 5,
-  "fields": {
-    "description": "На море",
-    "status": "новая",
-    "complete_data": "2023-06-29",
-    "detailed_description": ""
+    "is_deleted": false,
+    "deleted_at": null
   }
 },
 {
@@ -386,9 +298,11 @@
   "pk": 6,
   "fields": {
     "description": "Спать",
+    "detailed_description": "",
     "status": "сделано",
     "complete_data": "2023-02-14",
-    "detailed_description": ""
+    "is_deleted": false,
+    "deleted_at": null
   }
 },
 {
@@ -396,9 +310,11 @@
   "pk": 7,
   "fields": {
     "description": "Кушать",
+    "detailed_description": "",
     "status": "новая",
     "complete_data": "2023-02-14",
-    "detailed_description": ""
+    "is_deleted": false,
+    "deleted_at": null
   }
 },
 {
@@ -406,9 +322,23 @@
   "pk": 8,
   "fields": {
     "description": "Дача",
+    "detailed_description": "купить дачу в 2025 году",
     "status": "новая",
     "complete_data": "2025-01-01",
-    "detailed_description": "купить дачу в 2025 году"
+    "is_deleted": false,
+    "deleted_at": null
+  }
+},
+{
+  "model": "to_do_app.task",
+  "pk": 9,
+  "fields": {
+    "description": "Горы",
+    "detailed_description": "",
+    "status": "сделано",
+    "complete_data": "2023-02-14",
+    "is_deleted": false,
+    "deleted_at": null
   }
 }
 ]
