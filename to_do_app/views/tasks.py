@@ -32,7 +32,6 @@ def update_task_view(request, pk):
         form = TaskForm(request.POST)
         if not form.is_valid():
             errors = form.errors
-            print(errors)
         else:
             task.description = form.cleaned_data['description']
             task.detailed_description = form.cleaned_data['detailed_description']
@@ -53,3 +52,14 @@ def update_task_view(request, pk):
         'choices': StatusChoice.choices,
         'errors': errors,
     })
+
+
+def delete_view(request, pk):
+    task = get_object_or_404(Task, pk=pk)
+    return render(request, 'task_confirm_delete.html', context={'task': task})
+
+
+def confirm_delete(request, pk):
+    task = get_object_or_404(Task, pk=pk)
+    task.delete()
+    return redirect('task_list')
