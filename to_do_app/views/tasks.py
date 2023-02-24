@@ -26,15 +26,30 @@ def add_task(request: WSGIRequest):
 
 
 def update_task_view(request, pk):
+    errors = {}
     task = get_object_or_404(Task, pk=pk)
     if request.method == "POST":
-        task.description = request.POST.get('description')
-        task.detailed_description = request.POST.get('detailed_description')
-        task.status = request.POST.get('status')
-        task.complete_data = request.POST.get('complete_data')
-        task.save()
-        return redirect('task_view', pk=task.pk)
+        form = TaskForm(request.POST)
+        if not form.is_valid():
+            errors = form.errors
+            print(errors)
+        else:
+            task.description = form.cleaned_data['description']
+            task.detailed_description = form.cleaned_data['detailed_description']
+            task.status = form.cleaned_data['status']
+            task.complete_data = form.cleaned_data['complete_data']
+            task.save()
+            return redirect('task_view', pk=task.pk)
+    else:
+        form = TaskForm(initial={
+            'description': task.description,
+            'detailed_description': task.detailed_description,
+            'status': task.status,
+            'complete_data': task.complete_data,
+        })
     return render(request, 'task_update.html', context={
+        'form': form,
         'task': task,
-        'choices': StatusChoice.choices
+        'choices': StatusChoice.choices,
+        'errors': errors,
     })

@@ -5,8 +5,11 @@
         <h2>Редактирование задачи</h2>
     </div>
     <div class="row mx-5 g-3 align-items-center">
+
         <form action="{% url 'update_task_view' task.pk %}" method="post">
-            {% include 'partial/task_form.html' with button_text='Изменить' %}
+            <div class="form-group">
+                {% include 'partial/task_form.html' with button_text='Изменить' %}
+            </div>
         </form>
     </div>
 {% endblock %}
